@@ -22,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::resource('ducks', DuckController::class);
 Route::controller(DuckController::class)->group(function () {
     Route::get('/ducks/{id}/feed/{food}', 'feed');
+    Route::get('/ducks/{id}/view', 'view');
 });

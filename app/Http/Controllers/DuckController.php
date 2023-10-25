@@ -72,4 +72,10 @@ class DuckController extends Controller
         $duck->update(['stomach_fill' => $newFill]);
         return $duck->toJson();
     }
+
+    public function view(string $id)
+    {
+        $duck = Duck::find($id);
+        return view('duck')->with('duck',$duck);
+    }
 }

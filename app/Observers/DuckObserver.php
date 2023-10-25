@@ -14,7 +14,7 @@ class DuckObserver
         $genders = Duck::GENDERS;
         $statuses = Duck::STATUSES;
         $demeanors = Duck::DEMEANORS;
-        $duck->color = rand(0,255).rand(0,255).rand(0,255);
+        $duck->color = rand(0,255).','.rand(0,255).','.rand(0,255);
         $duck->status = $duck->status ?? $statuses[array_rand($statuses)];
         $max_age = config('app.duck.max_age');
         if($duck->status == 'egg') {
