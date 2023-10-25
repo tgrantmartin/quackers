@@ -45,7 +45,7 @@ class IncrementDuckAges implements ShouldQueue
                 $duck->stomach_fill = max(0,$duck->stomach_fill - $duck->stomach_empty_rate);
             }
 
-            $duck->mass += $duck->growth_rate;
+            $duck->mass += min($duck->growth_rate,config('app.duck.max_mass'));
 
 
 
